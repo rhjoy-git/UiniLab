@@ -1,3 +1,11 @@
+@import "https://fonts.googleapis.com/css?family=Nunito:300,400,500,600,700,800&display=swap";
+
+*,
+body,
+html {
+    box-sizing: border-box;
+}
+
 /********** Template CSS **********/
 :root {
     --primary: #6222CC;
@@ -122,7 +130,7 @@ h6,
 
 .navbar-light .navbar-brand h1 {
     color: #FFFFFF;
-    font-family: "Libre Baskerville", serif;
+    font-family: "nunito", serif;
     font-weight: 400;
     font-style: normal;
 }
@@ -219,7 +227,7 @@ h6,
 /*** Hero Header ***/
 .hero-header {
     margin-bottom: 6rem;
-    padding: 18rem 0;
+    padding: 12rem 0 18rem;
     background:
         url(../img/blob-top-left.png),
         url(../img/blob-top-right.png),
@@ -235,6 +243,64 @@ h6,
         center center,
         center bottom;
     background-repeat: no-repeat;
+}
+
+.hero-header h1 {
+    font-family: "nunito", serif;
+}
+
+.hero-header h1>span {
+    color: #FBA504;
+    font-weight: 800;
+}
+
+.hero-header h1>span>sup {
+    top: -1.2rem;
+    font-size: 1rem;
+}
+
+.hero-header p {
+    text-align: justify;
+    font-size: 1rem;
+    color: #DDDDDD;
+}
+
+.hero-header ul li:first-child {
+    margin-left: 0;
+}
+
+.hero-header ul li {
+    display: inline-block;
+    margin-left: 0;
+    margin-top: 10px;
+
+}
+
+.main-btn {
+    display: inline-block;
+    font-weight: 500;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    padding: 0 40px;
+    font-size: 16px;
+    line-height: 50px;
+    border-radius: 50px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 5;
+    -webkit-transition: all .4s ease-out 0s;
+    -moz-transition: all .4s ease-out 0s;
+    -ms-transition: all .4s ease-out 0s;
+    -o-transition: all .4s ease-out 0s;
+    transition: all .4s ease-out 0s;
+    background-color: #FBA504;
+    border-top-right-radius: 0;
+    border: 0;
 }
 
 @media (max-width: 991.98px) {
@@ -305,16 +371,53 @@ h6,
 
 
 /*** Feature ***/
+.feature {
+    display: flex;
+    flex-direction: column;
+}
+
 .feature-item {
+    flex: 1;
     transition: .5s;
 }
 
-.feature-item:hover {
-    margin-top: -15px;
+.feature-item {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.feature-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
 
-/*** About ***/
+.feature-item i {
+    padding: 1rem 0;
+}
+
+.feature-item i,
+.feature-item h5 {
+    transition: color 0.3s ease;
+}
+
+.feature-item:hover i {
+    color: #FBA504 !important;
+}
+
+.feature-item h5 {
+    font-family: "nunito", sans-serif;
+    font-size: 28px;
+    color: #38424d;
+}
+
+.feature-item h5:hover {
+    color: #FBA504;
+}
+
+/*** why-choose-us ***/
+.why-choose-us h1 {
+    font-family: "nunito", sans-serif;
+}
+
 .progress {
     height: 5px;
 }
@@ -324,39 +427,33 @@ h6,
     transition: 3s;
 }
 
-
-/*** Fact ***/
-.fact {
-    margin: 6rem 0;
-    background:
-        url(../img/blob-top-left.png),
-        url(../img/blob-top-right.png),
-        url(../img/blob-bottom-left.png),
-        url(../img/blob-bottom-right.png),
-        url(../img/blob-center.png);
-    background-position:
-        left 0px top 0px,
-        right 0px top 0px,
-        left 0px bottom 0px,
-        right 0px bottom 0px,
-        center center;
-    background-repeat: no-repeat;
-}
-
-
 /*** Service ***/
+.service h1,
+.service h5,
+.service p{
+    font-family: "nunito" ,sans-serif;
+}
+.service-card {
+    display: flex;
+    flex-direction: column;
+}
 .service-item {
     position: relative;
     padding: 45px 30px;
     background: var(--light);
     overflow: hidden;
     transition: .5s;
+    flex: 1;
 }
 
 .service-item:hover {
     margin-top: -15px;
     padding-bottom: 60px;
     background: var(--primary);
+}
+
+.service-item p{
+    text-align: justify;
 }
 
 .service-item .service-icon {
@@ -400,7 +497,7 @@ h6,
     z-index: 1;
 }
 
-.service-item a.btn:hover {
+.service-item:hover a.btn {
     color: var(--dark);
     background: var(--secondary);
 }
@@ -453,25 +550,6 @@ h6,
 }
 
 
-/*** Newsletter ***/
-.newsletter {
-    margin: 6rem 0;
-    background:
-        url(../img/blob-top-left.png),
-        url(../img/blob-top-right.png),
-        url(../img/blob-bottom-left.png),
-        url(../img/blob-bottom-right.png),
-        url(../img/blob-center.png);
-    background-position:
-        left 0px top 0px,
-        right 0px top 0px,
-        left 0px bottom 0px,
-        right 0px bottom 0px,
-        center center;
-    background-repeat: no-repeat;
-}
-
-
 /*** Testimonial ***/
 .testimonial-carousel .testimonial-item {
     padding: 0 30px 30px 30px;
@@ -516,6 +594,38 @@ h6,
     background: var(--primary);
 }
 
+.owl-dots {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.owl-dot {
+    display: inline-block !important;
+    width: 3px;
+    height: 10px;
+    background-color: mustard;
+    margin: 5px;
+    opacity: 0.5;
+}
+
+.owl-dot.active {
+    opacity: 1;
+}
+
+.owl-dots .owl-dot {
+    width: 3px;
+    height: 10px;
+    background-color: mustard;
+    /* Mustard color */
+}
+
+.owl-dots .owl-dot.active {
+    background-color: mustard;
+    /* Mustard color for active dot */
+}
 
 /*** Footer ***/
 .footer {
