@@ -4,6 +4,7 @@
 body,
 html {
     box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
 }
 
 /********** Template CSS **********/
@@ -378,10 +379,6 @@ h6,
 
 .feature-item {
     flex: 1;
-    transition: .5s;
-}
-
-.feature-item {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -414,8 +411,15 @@ h6,
 }
 
 /*** why-choose-us ***/
-.why-choose-us h1 {
+
+.why-choose-us h1,
+.contact h1,
+.contact p {
     font-family: "nunito", sans-serif;
+}
+
+.why-choose-us p {
+    text-align: justify;
 }
 
 .progress {
@@ -430,13 +434,15 @@ h6,
 /*** Service ***/
 .service h1,
 .service h5,
-.service p{
-    font-family: "nunito" ,sans-serif;
+.service p {
+    font-family: "nunito", sans-serif;
 }
+
 .service-card {
     display: flex;
     flex-direction: column;
 }
+
 .service-item {
     position: relative;
     padding: 45px 30px;
@@ -452,7 +458,7 @@ h6,
     background: var(--primary);
 }
 
-.service-item p{
+.service-item p {
     text-align: justify;
 }
 
@@ -582,6 +588,94 @@ h6,
     box-shadow: 0 0 10px rgba(0, 0, 0, .5);
 }
 
+/*** Pricing css ***/
+.pricing * {
+    font-family: "Nunito", sans-serif !important;
+}
+
+.pricing-title {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 25px;
+}
+
+.pricing-title .title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    font-weight: 600;
+    color: #38424d;
+    transition: all .3s ease-out;
+}
+
+.pricing-item {
+    text-align: center;
+}
+
+.flex-all-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pricing ul li {
+    background: #DDDDDD;
+}
+
+.pricing ul>li:first-child {
+    border-radius: 50px 0 0 50px;
+}
+
+.pricing ul>li:last-child {
+    border-radius: 0 50px 50px 0;
+}
+
+.pricing ul li.active {
+    background: #FBA504;
+    color: #252525;
+}
+
+.pricing-item div.rounded {
+    border: 3px dashed #FFF8E1;
+    transition: border-color 0.5s ease, transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.pricing-item div.rounded:hover {
+    border-color: #FBA504;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.pricing-item .services_shape {
+    transition: fill 0.3s ease;
+}
+
+.pricing-item .rounded:hover .services_shape {
+    fill: #FBA504;
+}
+
+.pricing-item .rounded:hover .title {
+    color: #fff;
+}
+
+.pricing-content .price {
+    font-size: 35px;
+    font-weight: 700;
+    color: #38424d;
+}
+
+.pricing-content a.btn {
+    padding: 7px 20px;
+    background-color: #FFF8E1;
+    transition: background-color 0.3s ease;
+}
+.pricing-item.active div.rounded:hover .pricing-content a.btn ,
+.pricing-item div.rounded:hover .pricing-content a.btn {
+    color: #fff;
+    background-color: #FBA504;
+}
 
 /*** Team ***/
 .team-item .btn {
