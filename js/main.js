@@ -2,7 +2,7 @@
     "use strict";
 
     // Spinner
-    var spinner = function () {
+    let spinner = function () {
         setTimeout(function () {
             if ($('#spinner').length > 0) {
                 $('#spinner').removeClass('show');
@@ -101,7 +101,7 @@
     });
 
     // Portfolio isotope and filter
-    var portfolioIsotope = $('.portfolio-container').isotope({
+    let portfolioIsotope = $('.portfolio-container').isotope({
         itemSelector: '.portfolio-item',
         layoutMode: 'fitRows'
     });
@@ -110,6 +110,26 @@
         $(this).addClass('active');
 
         portfolioIsotope.isotope({
+            filter: $(this).data('filter')
+        });
+    });
+
+    // Pricing isotope and filter
+    let pricingIsotope = $('.pricing-container').isotope({
+        itemSelector: '.pricing-item',
+        layoutMode: 'fitRows'
+    });
+   // Run the default filter function on page load
+    const activeFilter = $('#pricing-flters li.active').data('filter');
+    pricingIsotope.isotope({
+        filter: activeFilter
+    });
+    // work after click item
+    $('#pricing-flters li').on('click', function () {
+        $("#pricing-flters li").removeClass('active');
+        $(this).addClass('active');
+
+        pricingIsotope.isotope({
             filter: $(this).data('filter')
         });
     });

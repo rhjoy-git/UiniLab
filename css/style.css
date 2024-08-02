@@ -592,7 +592,16 @@ h6,
 .pricing * {
     font-family: "Nunito", sans-serif !important;
 }
-
+.pricing .filter ul > li{
+    cursor: pointer;
+    font-size: 1rem;
+    color: #252525;
+    font-weight: 700;
+    text-decoration: none;
+}
+.pricing .filter ul > li.active{
+    color: #fff;
+}
 .pricing-title {
     position: relative;
     display: inline-block;
@@ -638,7 +647,7 @@ h6,
 }
 
 .pricing-item div.rounded {
-    border: 3px dashed #FFF8E1;
+    border: 2px dashed #e8e8e8;
     transition: border-color 0.5s ease, transform 0.5s ease, box-shadow 0.5s ease;
 }
 
@@ -671,8 +680,29 @@ h6,
     background-color: #FFF8E1;
     transition: background-color 0.3s ease;
 }
-.pricing-item.active div.rounded:hover .pricing-content a.btn ,
+.pricing-content a.btn:hover{
+    box-shadow: none;
+}
 .pricing-item div.rounded:hover .pricing-content a.btn {
+    color: #fff;
+    background-color: #FBA504;
+}
+
+.pricing-item.active div.rounded {
+    border-color: #FBA504;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.pricing-item.active .title {
+    color: #fff;
+}
+
+.pricing-item.active .services_shape {
+    fill: #FBA504;
+}
+
+.pricing-item.active .pricing-content a.btn {
     color: #fff;
     background-color: #FBA504;
 }
