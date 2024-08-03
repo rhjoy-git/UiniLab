@@ -119,7 +119,7 @@
         itemSelector: '.pricing-item',
         layoutMode: 'fitRows'
     });
-   // Run the default filter function on page load
+    // Run the default filter function on page load
     const activeFilter = $('#pricing-flters li.active').data('filter');
     pricingIsotope.isotope({
         filter: activeFilter
@@ -135,3 +135,27 @@
     });
 
 })(jQuery);
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Navbar icon toggler in mobile screen
+    let navbarToggler = document.querySelector(".navbar-toggler");
+    let hamburgerIcon = navbarToggler.querySelector("i");
+
+    navbarToggler.addEventListener("click", function () {
+        hamburgerIcon.classList.toggle("fa-bars");
+        hamburgerIcon.classList.toggle("fa-times");
+    });
+
+    let navLinks = document.querySelectorAll(".nav-link");
+    navLinks.forEach(function (link) {
+        link.addEventListener("click", function (event) {
+            let navbarShow = document.querySelector(".navbar-collapse.show");
+            if (navbarShow) {
+                navbarShow.classList.remove("show");
+                hamburgerIcon.className = "fa fa-bars";
+            }
+        });
+    });
+
+
+});
